@@ -1,3 +1,12 @@
+main {
+  font-family: Consolas, 'Courier New', Courier, monospace, monospace;
+  display: flex;
+}
+
+nav {
+  flex-direction: column;
+  flex: 2
+}
 header {
   font-size: 2em;
   margin: 1% 1%
@@ -7,12 +16,18 @@ h2 {
   margin: 1% 2%;
 }
 
-p, code {
+p {
   margin: 2% 0 0 4%;
 }
 
 code {
+  font-size: 1.5rem;
+  width: 100%;
   background-color: black;
   color: green;
   font-size: 16px;
+}
+
+span#blu {
+  color: #3492ff;
 }

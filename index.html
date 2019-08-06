@@ -11,14 +11,17 @@
   <main id="main-doc">
     <nav id="navbar">
       <header>
-          Lodash - A modern JavaScript utility library delivering modularity, performance & extras.
+          <span id='blu'>Lodash</span>
       </header>
-      <a href=""></a>
-      <a href=""></a>
-      <a href=""></a>
-      <a href=""></a>
-      <a href=""></a>
+      <h2>v4.17.15</h2>
+      <a href="#Array_Methods">Array Methods</a>
+      <a href="#Number_Methods">Number Methods</a>
+      <a href="#Collection_Methods"></a>
+      <a href="#Date_Methods">Date Methods</a>
+      <a href="#String_Methods">String Methods</a>
     </nav>
+
+    <div class="container">
     <section class="main-section" id="Array_Methods">
       <header class="topic"> "Array" Methods</header>
       <code>_.chunk(array, [size=1])
@@ -27,7 +30,7 @@
       <h2>Since</h2>
       <p>3.0.0</p>
       <h2>Arguments</h2>
-      <p>array (Array): The array to process.</p>
+      <p><span>array (Array)</span>: The array to process.</p>
       <p>[size =1] (number): The lenth of each chunk</p>
       <h2>Returns</h2>
       <p>(Array): Returns the new array of chunks</p>
@@ -68,20 +71,83 @@
           console.log(array)
           // => [1]
         </code>
-    </section>
-    <section class="main-section">
-        <header class="topic"></header>
-    </section>
-    <section class="main-section">
-        <header class="topic"></header>
-    </section>
-    <section class="main-section">
-        <header class="topic"></header>
-    </section>
-    <section class="main-section">
-        <header class="topic"></header>
-    </section>
 
+
+        <code>_.difference(array, [values])</code>
+        <p>Creates an array of array values not included in the other given arrays using SameValueZero for equality comparisons. The order and references of result values are determined by the first array.</p>
+        <p>Note: unlike _.pullAll, this method returns a new array.</p>
+        <h2>Since</h2>
+        <p>0.1.0</p>
+        <h2>Arguments</h2>
+        <p>array (Array): The array to inspect</p>
+        <p>[values] (...Array) The values to exclude. </p>
+        <h2>Returns</h2>
+        <p>(Array): Returns the new array of filtered values.</p>
+        <h2>Example</h2>
+        <code>
+          _.difference([2,1][2, 3]) // => [1]
+        </code>
+
+        <code>
+          _.differenceBy(array, [values], [iteratee=_.identity])
+        </code>
+        <p>
+          This method is like _.difference except that it accepts iteratee which
+          is invoked for each element of array and values to generate the criterion
+          by which they're compared. The order and references of result values are
+          determined by the first array. The iteratee is invoked with one argument: (value).
+        </p>
+        <p>Note: Unlike _.pullAllBy, this method returns a new array.</p>
+        <h2>Since</h2>
+        <p>4.0.0</p>
+        <h2>Arguments</h2>
+        <p>array (Array): The array to inspect.</p>
+        <p>[values] (...Array): The values to exclude.</p>
+        <p>[iteratee=_.identity] (Function): The iteratee invoked per element.</p>
+        <h2>Returns</h2>
+        <p>(Array): Returns the new array of filtered values.</p>
+        <h2>Example</h2>
+        <code>
+            _.differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor);
+            // => [1.2]
+             
+            // The `_.property` iteratee shorthand.
+            _.differenceBy([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], 'x');
+            // => [{ 'x': 2 }]
+        </code>
+
+    </section>
+    <section class="main-section" id="Collection_Methods">
+        <header class="topic">Collection Methods</header>
+
+
+        <code>_.chunk(array, [size=1])
+          </code>
+          <p>Creates an array of elements split into groups the length of size. If the elements cannot be split evenly, the final chunk will be the remaining elements</p>
+          <h2>Since</h2>
+          <p>3.0.0</p>
+          <h2>Arguments</h2>
+          <p><span>array (Array)</span>: The array to process.</p>
+          <p>[size =1] (number): The lenth of each chunk</p>
+          <h2>Returns</h2>
+          <p>(Array): Returns the new array of chunks</p>
+          <h2>Example</h2>
+          <code>
+            _.chunk(['a', 'b', 'c', 'd'], 2) // => [['a', 'b'], ['c', 'd']]
+            _.chunk(['a', 'b', 'c', 'd'], 3) // => [['a', 'b', 'c'], 'd']]
+
+          </code>
+    </section>
+    <section class="main-section" id="String_Methods">
+        <header class="topic">String Methods</header>
+    </section>
+    <section class="main-section" id="Number_Methods">
+        <header class="topic">Number Methods</header>
+    </section>
+    <section class="main-section" id="Date_Methods">
+        <header class="topic">Date Methods</header>
+    </section>
+  </div>
   </main>
 </body>
 </html>
