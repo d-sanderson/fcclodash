@@ -5,7 +5,14 @@ main {
 
 nav {
   flex-direction: column;
-  flex: 2
+  width: 10%;
+  position: fixed;
+
+
+}
+nav > a {
+  display: block;
+
 }
 header {
   font-size: 2em;
@@ -26,8 +33,21 @@ code {
   background-color: black;
   color: green;
   font-size: 16px;
+  display: block;
+  margin: 10px 0;
 }
 
 span#blu {
   color: #3492ff;
+}
+
+section {
+  margin: 0 0 0 12%;
+}
+section > code  {
+  font-size: 20px;
+}
+
+.container {
+  flex: 4;
 }

@@ -14,11 +14,12 @@
           <span id='blu'>Lodash</span>
       </header>
       <h2>v4.17.15</h2>
-      <a href="#Array_Methods">Array Methods</a>
-      <a href="#Number_Methods">Number Methods</a>
-      <a href="#Collection_Methods"></a>
-      <a href="#Date_Methods">Date Methods</a>
-      <a href="#String_Methods">String Methods</a>
+      <a href="#Array_Methods">Array</a>
+      <a href="#Collection_Methods">Collection</a>
+      <a href="#String_Methods">String</a>
+      <a href="#Number_Methods">Number</a>
+      <a href="#Date_Methods">Date</a>
+
     </nav>
 
     <div class="container">
@@ -30,10 +31,10 @@
       <h2>Since</h2>
       <p>3.0.0</p>
       <h2>Arguments</h2>
-      <p><span>array (Array)</span>: The array to process.</p>
-      <p>[size =1] (number): The lenth of each chunk</p>
+      <p><span id="blu">array (Array)</span>: The array to process.</p>
+      <p>[size =1] (number): The length of each chunk.</p>
       <h2>Returns</h2>
-      <p>(Array): Returns the new array of chunks</p>
+      <p>(Array): Returns the new array of chunks.</p>
       <h2>Example</h2>
       <code>
         _.chunk(['a', 'b', 'c', 'd'], 2) // => [['a', 'b'], ['c', 'd']]
@@ -53,9 +54,9 @@
       <p>(Array): Returns the new array of filtered values</p>
       <h2>Example</h2>
       <code>_.compact([0, 1, false, 2, '', 3]) => [1, 2, 3]</code>
-      <br>
+
       <code>_.concat(array, [values])
-        </code>
+      </code>
         <p>Creates a new array concatenating array with any additional array and/or values.</p>
         <h2>Since</h2>
         <p>4.0.0</p>
@@ -118,34 +119,65 @@
 
     </section>
     <section class="main-section" id="Collection_Methods">
-        <header class="topic">Collection Methods</header>
+        <header class="topic">"Collection" Methods</header>
 
 
-        <code>_.chunk(array, [size=1])
+        <code>_.countBy(collection, [iteratee=_.identity])
           </code>
-          <p>Creates an array of elements split into groups the length of size. If the elements cannot be split evenly, the final chunk will be the remaining elements</p>
+          <p>Creates an object composed of keys generated from the results of running each element of collection thru iteratee. The corresponding value of each key is the number of times the key was returned by iteratee. The iteratee is invoked with one argument: (value).</p>
           <h2>Since</h2>
-          <p>3.0.0</p>
+          <p>0.5.0</p>
           <h2>Arguments</h2>
-          <p><span>array (Array)</span>: The array to process.</p>
-          <p>[size =1] (number): The lenth of each chunk</p>
+          <p><span id="blu">Collection (Array|Object)</span>: The collection to iterate over.</p>
+          <p><span id="blu">[iteratee=_.identity] (Function)</span>: The iteratee to transform keys.</p>
           <h2>Returns</h2>
-          <p>(Array): Returns the new array of chunks</p>
+          <p><span id="blu">(Object)</span>: Returns the new composed aggregate object.</p>
           <h2>Example</h2>
           <code>
-            _.chunk(['a', 'b', 'c', 'd'], 2) // => [['a', 'b'], ['c', 'd']]
-            _.chunk(['a', 'b', 'c', 'd'], 3) // => [['a', 'b', 'c'], 'd']]
+              _.countBy([6.1, 4.2, 6.3], Math.floor);
+              // => { '4': 1, '6': 2 }
+            <br>
+              // The `_.property` iteratee shorthand.
+              _.countBy(['one', 'two', 'three'], 'length');
+              // => { '3': 2, '5': 1 }
+          </code>
 
+          <code>_.forEach(collection, [iteratee=_.identity])</code>
+         <p>Iterates over elements of collection and invokes iteratee for each element. The iteratee is invoked with three arguments: (value, index|key, collection). Iteratee functions may exit iteration early by explicitly returning false.</p>
+
+         <p>Note: As with other "Collections" methods, objects with a "length" property are iterated like arrays. To avoid this behavior use _.forIn or _.forOwn for object iteration.</p>
+
+          <h2>Since</h2>
+          <p>0.1.0</p>
+
+          <h2>Aliases</h2>
+          <p>_.each</p>
+
+          <h2>Arguments</h2>
+          <p>collection (Array|Object): The collection to iterate over.</p>
+          <p>[iteratee=_.identity] (Function): The function invoked per iteration.</p>
+          <h2>Returns</h2>
+          <p>(*): Returns collection.</p>
+          <h2>Example</h2>
+          <code>_.forEach([1, 2], function(value) {
+                console.log(value);
+                  });
+                  // => Logs `1` then `2`.
+              <br>
+              _.forEach({ 'a': 1, 'b': 2 }, function(value, key) {
+              console.log(key);
+              });
+              // => Logs 'a' then 'b' (iteration order is not guaranteed).
           </code>
     </section>
     <section class="main-section" id="String_Methods">
-        <header class="topic">String Methods</header>
+        <header class="topic">"String" Methods</header>
     </section>
     <section class="main-section" id="Number_Methods">
-        <header class="topic">Number Methods</header>
+        <header class="topic">"Number" Methods</header>
     </section>
     <section class="main-section" id="Date_Methods">
-        <header class="topic">Date Methods</header>
+        <header class="topic">"Date"" Methods</header>
     </section>
   </div>
   </main>
