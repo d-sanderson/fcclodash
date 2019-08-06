@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="index.css" />
     <title>
-      Lodash - A modern JavaScript utility library delivering modularity,
-      performance & extras.
+      Lodash Documentation
     </title>
   </head>
   <body>
     <main id="main-doc">
       <nav id="navbar">
         <header>
-          <span id="blu">Lodash</span>
+          <span id="blu">_Lodash</span>
         </header>
         <h2>v4.17.15</h2>
         <a href="#Array_Methods">Array</a>
@@ -44,8 +44,13 @@
           <p><span id="blu">(Array)</span>: Returns the new array of chunks.</p>
           <h2>Example</h2>
           <code>
-            _.chunk(['a', 'b', 'c', 'd'], 2) // => [['a', 'b'], ['c', 'd']]
-            _.chunk(['a', 'b', 'c', 'd'], 3) // => [['a', 'b', 'c'], 'd']]
+            _.chunk(['a', 'b', 'c', 'd'], 2)
+            <br />
+            // => [['a', 'b'], ['c', 'd']]
+            <br />
+            _.chunk(['a', 'b', 'c', 'd'], 3)
+            <br />
+            // => [['a', 'b', 'c'], 'd']]
           </code>
 
           <code>_.compact(array) </code>
@@ -80,9 +85,17 @@
             <span id="blu">(Array)</span>: Returns the new concatenated array.
           </p>
           <h2>Example</h2>
-          <code
-            >let array = [1], let other = _.concat(array, 2, [3], [[4]]);
-            console.log(other); // => [1,2,3, [4]] console.log(array) // => [1]
+          <code>
+            let array = [1]
+            <br />
+            let other = _.concat(array, 2, [3], [[4]]);
+            <br />
+            console.log(other);
+            <br />
+            // => [1,2,3, [4]]
+            <br />console.log(array)
+            <br />
+            // => [1]
           </code>
 
           <code>_.difference(array, [values])</code>
@@ -172,10 +185,15 @@
           </p>
           <h2>Example</h2>
           <code>
-            _.countBy([6.1, 4.2, 6.3], Math.floor); // => { '4': 1, '6': 2 }
+            _.countBy([6.1, 4.2, 6.3], Math.floor);
             <br />
-            // The `_.property` iteratee shorthand. _.countBy(['one', 'two',
-            'three'], 'length'); // => { '3': 2, '5': 1 }
+            // => { '4': 1, '6': 2 }
+            <br />
+            // The `_.property` iteratee shorthand.
+            <br />
+            _.countBy(['one', 'two','three'], 'length');
+            <br />
+            // => { '3': 2, '5': 1 }
           </code>
 
           <code>_.forEach(collection, [iteratee=_.identity])</code>
@@ -196,7 +214,7 @@
           <p>0.1.0</p>
 
           <h2>Aliases</h2>
-          <p>_.each</p>
+          <p><span id="blu">_.each</span></p>
 
           <h2>Arguments</h2>
           <p>
@@ -232,7 +250,7 @@
           <p>2.0.0</p>
 
           <h2>Aliases</h2>
-          <p>_.eachRight</p>
+          <p><span id="blu">_.eachRight</span></p>
 
           <h2>Arguments</h2>
           <p>
@@ -586,7 +604,192 @@
           </code>
         </section>
         <section class="main-section" id="Date_Methods">
-          <header class="topic">"Date"" Methods</header>
+          <header class="topic">"Object" Methods</header>
+          <code>
+            _.assign(object, [sources])
+          </code>
+          <p>
+            Assigns own enumerable string keyed properties of source objects to
+            the destination object. Source objects are applied from left to
+            right. Subsequent sources overwrite property assignments of previous
+            sources.
+          </p>
+          <p>
+            <b>Note</b>: This method mutates object and is loosely based on
+            Object.assign.
+          </p>
+          <h2>Since</h2>
+          <p>0.10.0</p>
+          <h2>Arguments</h2>
+          <p><span id="blu">object (Object)</span>: The destinations object.</p>
+          <p><span id="blu">[source] (...Object)</span>: The source objects.</p>
+          <h2>Returns</h2>
+          <p><span id="blu">(Object)</span> returns object.</p>
+          <h2>Example</h2>
+          <code>
+            function Foo() { this.a = 1; }
+            <br />
+            function Bar() { this.c = 3; }
+            <br />
+            Foo.prototype.b = 2;
+            <br />
+            Bar.prototype.d = 4;
+            <br />
+            _.assign({ 'a': 0 }, new Foo, new Bar);
+            <br />
+            // => { 'a': 1, 'c': 3 }
+          </code>
+
+          <code>_.assignIn(object, [sources])</code>
+          <p>
+            This method is like _.assign except that it iterates over own and
+            inherited source properties.
+          </p>
+          <p><b>Note</b>: This method mutates object.</p>
+
+          <h2>Since</h2>
+          <p>4.0.0</p>
+          <h2>Alias</h2>
+          <p><span id="blu">_.extend</span></p>
+          <h2>Arguments</h2>
+          <p><span id="blu">object (Object)</span> The destination object.</p>
+          <p><span id="blu">[sources] (...Object)</span> The source objects.</p>
+          <h2>Returns</h2>
+          <p>Returns object.</p>
+          <h2>Example</h2>
+          <code>
+            function Foo() {
+            <br />
+            this.a = 1;
+            <br />
+            }
+            <br />
+            function Bar() {
+            <br />
+            this.c = 3;
+            <br />
+            }
+            <br />
+
+            Foo.prototype.b = 2;
+            <br />
+            Bar.prototype.d = 4;
+            <br />
+            _.assignIn({ 'a': 0 }, new Foo, new Bar);
+            <br />
+            // => { 'a': 1, 'b': 2, 'c': 3, 'd': 4 }
+          </code>
+
+          <code>._assignInWith(object, sources, [customizer])</code>
+          <p>
+            This method is like _.assignIn except that it accepts customizer
+            which is invoked to produce the assigned values. If customizer
+            returns undefined, assignment is handled by the method instead. The
+            customizer is invoked with five arguments: (objValue, srcValue, key,
+            object, source).
+          </p>
+          <p><b>Note</b>: This method mutates object.</p>
+          <h2>Since</h2>
+          <p>4.0.0</p>
+          <h2>Aliases</h2>
+          <p><span id="blu">._extendWith</span></p>
+          <h2>Arguments</h2>
+          <p><span id="blue">object (Object)</span>: The destination object.</p>
+          <p><span id="blue">sources (...Object)</span>: The source objects.</p>
+          <p>
+            <span id="blue">[customizer] (Function)</span>: The function to
+            customize assigned values.
+          </p>
+          <h2>Returns</h2>
+          <p><span id="blu">Object</span>: Returns object</p>
+          <h2>Example</h2>
+          <code>
+            function customizer(objValue, srcValue) {
+            <br />
+            return _.isUndefined(objValue) ? srcValue : objValue;
+            <br />
+            }
+            <br />
+            var defaults = _.partialRight(_.assignInWith, customizer);
+            <br />
+            defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 });
+            <br />
+            // => { 'a': 1, 'b': 2 }
+          </code>
+
+          <code>_.at(objects, paths)</code>
+          <p>
+            Creates an array of values corresponding to paths of object.
+          </p>
+          <h2>Since</h2>
+          <h2>Arguments</h2>
+          <p>
+            <span id="blu">object (Object)</span>: The object to iterate over.
+          </p>
+          <p>
+            <span id="blu">[paths] (...(string|string[]))</span>: The property
+            paths to pick.
+          </p>
+          <h2>Returns</h2>
+          <p><span id="blu">(Array)</span>: Returns the picked values</p>
+          <h2>Example</h2>
+          <code>
+            var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
+            <br />
+            _.at(object, ['a[0].b.c', 'a[1]']);
+            <br />
+            // => [3, 4]
+          </code>
+
+          <code> _.create(prototype, [properties])</code>
+          <p>
+            Creates an object that inherits from the prototype object. If a
+            properties object is given, its own enumerable string keyed
+            properties are assigned to the created object.
+          </p>
+          <h2>Since</h2>
+          <p>2.3.0</p>
+          <h2>Arguments</h2>
+          <p>
+            <span id="blu">prototype (Object)</span>: The object to inherit
+            from.
+          </p>
+          <p>
+            <span id="blu">[properties] (Object)</span>: The properties to
+            assign to the object.
+          </p>
+          <h2>Returns</h2>
+          <p><span id="blu">(Object)</span>: Returns the new object.</p>
+          <h2>Example</h2>
+          <code>
+            function Shape() {
+            <br />
+            this.x = 0;
+            <br />
+            this.y = 0;
+            <br />
+            }
+            <br />
+            function Circle() {
+            <br />
+            Shape.call(this); }
+            <br />
+            Circle.prototype = _.create(Shape.prototype, {
+            <br />
+            'constructor': Circle
+            <br />
+            });
+            <br />
+            var circle = new Circle;
+            <br />
+            circle instanceof Circle;
+            <br />
+            // => true
+            <br />
+            circle instanceof Shape;
+            <br />
+            // => true
+          </code>
         </section>
       </div>
     </main>

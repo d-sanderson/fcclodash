@@ -5,10 +5,7 @@ main {
 
 nav {
   flex-direction: column;
-  width: 10%;
   position: fixed;
-
-
 }
 nav > a {
   display: block;
