@@ -301,32 +301,174 @@
           <h2>Since</h2>
           <p>0.1.0</p>
           <h2>Arguments</h2>
-          <p><span id="blu">collection (Array|Object|String)</span>The collection to inspect.</p>
+          <p>
+            <span id="blu">collection (Array|Object|String)</span>The collection
+            to inspect.
+          </p>
           <p><span id="blu">value (*)</span>The value to search for.</p>
-          <p><span id="blu">[fromIndex=0] (number)</span>The index to serch from.</p>
+          <p>
+            <span id="blu">[fromIndex=0] (number)</span>The index to serch from.
+          </p>
           <h2>Returns</h2>
-          <p><span id="blu">(boolean)</span>: Returns true if the value is found, else false.</p>
+          <p>
+            <span id="blu">(boolean)</span>: Returns true if the value is found,
+            else false.
+          </p>
           <h2>Example</h2>
           <code>
-              _.includes([1, 2, 3], 1);
-              <br>
-              // => true
-              <br>
-              _.includes([1, 2, 3], 1, 2);
-              <br>
-              // => false
-              <br>
-              _.includes({ 'a': 1, 'b': 2 }, 1);
-              <br>
-              // => true
-              <br>
-              _.includes('abcd', 'bc');
-              <br>
-              // => true
+            _.includes([1, 2, 3], 1);
+            <br />
+            // => true
+            <br />
+            _.includes([1, 2, 3], 1, 2);
+            <br />
+            // => false
+            <br />
+            _.includes({ 'a': 1, 'b': 2 }, 1);
+            <br />
+            // => true
+            <br />
+            _.includes('abcd', 'bc');
+            <br />
+            // => true
           </code>
         </section>
         <section class="main-section" id="String_Methods">
           <header class="topic">"String" Methods</header>
+          <code>_.camelCase([string=''])</code>
+          <p>Converts string to camel case</p>
+          <h2>Since</h2>
+          <p>3.0.0</p>
+          <h2>Arguments</h2>
+          <p>
+            <span id="blu">[string=''] (string)</span>: The string to convert.
+          </p>
+          <h2>Returns</h2>
+          <p><span id="blu">(string)</span> Returns the camel cased string.</p>
+          <h2>Example</h2>
+          <code>
+            ._camelCase('Foo Bar')
+            <br />
+            // => 'fooBar _.camelCase('--foo-bar--');
+            <br />
+            // => 'fooBar'
+            <br />
+            _.camelCase('__FOO_BAR__');
+            <br />
+            // => 'fooBar''
+          </code>
+
+          <code>
+            _.capitalize([string=''])
+          </code>
+          <p>
+            Converts the first character of string to uppercase and the
+            remaining to lower case.
+          </p>
+          <h2>Since</h2>
+          <p>3.0.0</p>
+          <h2>Arguments</h2>
+          <p>
+            <span id="blu">[string=''] (string)</span>:The string to capitalize.
+          </p>
+          <h2>Returns</h2>
+          <p><span id="blu">(string)</span>:Returns the capitalized string.</p>
+          <h2>Example</h2>
+          <code>
+            _.capitalize('fred');
+            <br />
+            // => 'fred'
+            <br />
+            _.capitalize('fred armisen');
+            <br />
+            // => 'Fred armisen'
+          </code>
+
+          <code>_.debur([string=''])</code>
+          <p>
+            Deburrs string by converting Latin-1 Supplement and Latin Extended-A
+            letters to basic Latin letters and removing combining diacritical
+            marks.
+          </p>
+          <h2>Since</h2>
+          <p>3.0.0</p>
+          <h2>Arguments</h2>
+          <p><span id="blu">[string='']</span>: The string to debur.</p>
+          <h2>Returns</h2>
+          <p><span id="blu">(string)</span>: returns the deburred string</p>
+          <h2>Example</h2>
+          <code>
+            _.deburr('déjà vu');
+            <br />
+            // => 'deja vu'
+          </code>
+
+          <code>
+            _.endsWith([string=''], [target], [position=string.length])
+          </code>
+          <p>Check if the string ends with the given target string.</p>
+          <h2>Since</h2>
+          <p>3.0.0</p>
+          <h2>Arguments</h2>
+          <p><span id="blu">[string='']</span>: The string to inspect.</p>
+          <p>
+            <span id="blu">[target] (string)</span>: The string to search for.
+          </p>
+          <p>
+            <span id="blu">[position=string.length](number)</span>: The position
+            to search up to.
+          </p>
+          <h2>Returns</h2>
+          <p><span id="blu"></span></p>
+          <h2>Example</h2>
+          <code>
+            _.endsWith('abc', 'c');
+            <br />
+            // => true
+            <br />
+            _.endsWith('abc', 'b');
+            <br />
+            // => false
+            <br />
+            _.endsWith('abc', 'b', 2);
+            <br />
+            // => true
+          </code>
+
+          <code>_.escape([string=''])</code>
+          <p>
+            Converts the characters "&", "<", ">", '"', and "'" in string to
+            their corresponding HTML entities.
+          </p>
+          <p>
+            <b>Note</b>: No other characters are escaped. To escape additional
+            characters use a third-party library like he.
+          </p>
+          <p>
+            Though the ">" character is escaped for symmetry, characters like
+            ">" and "/" don't need escaping in HTML and have no special meaning
+            unless they're part of a tag or unquoted attribute value. See
+            Mathias Bynens's article (under "semi-related fun fact") for more
+            details.
+          </p>
+          <p>
+            When working with HTML you should always quote attribute values to
+            reduce XSS vectors.
+          </p>
+          <h2>Since</h2>
+          <p>0.1.0</p>
+          <h2>Arguments</h2>
+          <p>
+            <span id="blu">[string=''] (string)</span>: The string to escaped
+          </p>
+          <h2>Returns</h2>
+          <p><span id="blue">(string)</span>: Returns the escaped string.</p>
+          <h2>Example</h2>
+          <code>
+            _.escape('fred, barney, & pebbles');
+            <br />
+            // => 'fred, barney, &amp; pebbles'
+          </code>
         </section>
         <section class="main-section" id="Number_Methods">
           <header class="topic">"Number" Methods</header>
