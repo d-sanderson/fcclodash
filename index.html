@@ -472,6 +472,118 @@
         </section>
         <section class="main-section" id="Number_Methods">
           <header class="topic">"Number" Methods</header>
+          <code>_.clamp(number, [lower], upper)</code>
+          <p>Clamps number within the inclusive lower and upper bounds</p>
+          <h2>Since</h2>
+          <p>4.0.0</p>
+          <h2>Arguments</h2>
+          <p><span id="blu">number (number)</span>: The number to clamp.</p>
+          <p><span id="blu">[lower](number)</span>: The lower bound.</p>
+          <p><span id="blu">upper (number)</span>: The upper bound.</p>
+          <h2>Returns</h2>
+          <p><span id="blu">(number)</span>: Returns the clamped number.</p>
+          <h2>Example</h2>
+          <code>
+            _.clamp(-10, -5, 5);
+            <br />
+            // => -5
+            <br />
+            _.clamp(10, -5, 5);
+            <br />
+            // => 5
+          </code>
+
+          <code>
+            _.inRange(number, [start=0], end)
+          </code>
+          <p>
+            Checks if n is between start and up to, but not including, end. If
+            end is not specified, it's set to start with start then set to 0. If
+            start is greater than end the params are swapped to support negative
+            ranges.
+          </p>
+          <h2>Since</h2>
+          <p>3.3.0</p>
+          <h2>Arguments</h2>
+          <p><span id="blu">number (number)</span>: The number to check</p>
+          <p>
+            <span id="blu">[start=0] (number)</span>: The start of the range.
+          </p>
+          <p><span id="blu">end (number)</span>: The end of the range.</p>
+          <h2>Returns</h2>
+          <p>Return true if the number is the range, else false.</p>
+          <h2>Example</h2>
+          <code>
+            _.inRange(3, 2, 4);
+            <br />
+            // => true
+            <br />
+            _.inRange(4, 8);
+            <br />
+            // => true
+            <br />
+            _.inRange(4, 2);
+            <br />
+            // => false
+            <br />
+            _.inRange(2, 2);
+            <br />
+            // => false
+            <br />
+            _.inRange(1.2, 2);
+            <br />
+            // => true
+            <br />
+            _.inRange(5.2, 4);
+            <br />
+            // => false
+            <br />
+            _.inRange(-3, -2, -6);
+            <br />
+            // => true
+          </code>
+
+          <code>_.random([lower=0], [upper=1], [floating])</code>
+          <p>
+            Produces a random number between the inclusive lower and upper
+            bounds. If only one argument is provided a number between 0 and the
+            given number is returned. If floating is true, or either lower or
+            upper are floats, a floating-point number is returned instead of an
+            integer.
+          </p>
+          <p>
+            <b>Note</b>: JavaScript follows the IEEE-754 standard for resolving
+            floating-point values which can produce unexpected results.
+          </p>
+          <h2>Since</h2>
+          <p>0.7.0</p>
+          <h2>Arguments</h2>
+          <p><span id="blu">[lower=0] (number)</span>:The lower bound.</p>
+          <p><span id="blu">[upper=1] (number)</span>:The upper bound.</p>
+          <p>
+            <span id="blu">[floating] (boolean)</span>:Specify returning a
+            floating-point number
+          </p>
+          <h2>Returns</h2>
+          <p>Returns the random number.</p>
+          <h2>Example</h2>
+          <code>
+            _.random(0, 5);
+            <br />
+            // => an integer between 0 and 5
+            <br />
+            _.random(5);
+            <br />
+            // => also an integer between 0 and 5
+            <br />
+            _.random(5, true);
+            <br />
+            // => a floating-point number between 0 and 5
+            <br />
+            _.random(1.2, 5.2);
+            <br />
+            // => a floating-point number between 1.2 and 5.2
+          </code>
         </section>
         <section class="main-section" id="Date_Methods">
           <header class="topic">"Date"" Methods</header>
