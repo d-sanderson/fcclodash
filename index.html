@@ -1,151 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="index.css">
-  <title>Lodash - A modern JavaScript utility library delivering modularity, performance & extras. </title>
-</head>
-<body>
-  <main id="main-doc">
-    <nav id="navbar">
-      <header>
-          <span id='blu'>Lodash</span>
-      </header>
-      <h2>v4.17.15</h2>
-      <a href="#Array_Methods">Array</a>
-      <a href="#Collection_Methods">Collection</a>
-      <a href="#String_Methods">String</a>
-      <a href="#Number_Methods">Number</a>
-      <a href="#Date_Methods">Date</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="index.css" />
+    <title>
+      Lodash - A modern JavaScript utility library delivering modularity,
+      performance & extras.
+    </title>
+  </head>
+  <body>
+    <main id="main-doc">
+      <nav id="navbar">
+        <header>
+          <span id="blu">Lodash</span>
+        </header>
+        <h2>v4.17.15</h2>
+        <a href="#Array_Methods">Array</a>
+        <a href="#Collection_Methods">Collection</a>
+        <a href="#String_Methods">String</a>
+        <a href="#Number_Methods">Number</a>
+        <a href="#Date_Methods">Date</a>
+      </nav>
 
-    </nav>
+      <div class="container">
+        <section class="main-section" id="Array_Methods">
+          <header class="topic">"Array" Methods</header>
+          <code>_.chunk(array, [size=1]) </code>
+          <p>
+            Creates an array of elements split into groups the length of size.
+            If the elements cannot be split evenly, the final chunk will be the
+            remaining elements
+          </p>
+          <h2>Since</h2>
+          <p>3.0.0</p>
+          <h2>Arguments</h2>
+          <p><span id="blu">array (Array)</span>: The array to process.</p>
+          <p>
+            <span id="blu">[size =1] (number)</span>: The length of each chunk.
+          </p>
+          <h2>Returns</h2>
+          <p><span id="blu">(Array)</span>: Returns the new array of chunks.</p>
+          <h2>Example</h2>
+          <code>
+            _.chunk(['a', 'b', 'c', 'd'], 2) // => [['a', 'b'], ['c', 'd']]
+            _.chunk(['a', 'b', 'c', 'd'], 3) // => [['a', 'b', 'c'], 'd']]
+          </code>
 
-    <div class="container">
-    <section class="main-section" id="Array_Methods">
-      <header class="topic"> "Array" Methods</header>
-      <code>_.chunk(array, [size=1])
-      </code>
-      <p>Creates an array of elements split into groups the length of size. If the elements cannot be split evenly, the final chunk will be the remaining elements</p>
-      <h2>Since</h2>
-      <p>3.0.0</p>
-      <h2>Arguments</h2>
-      <p><span id="blu">array (Array)</span>: The array to process.</p>
-      <p>[size =1] (number): The length of each chunk.</p>
-      <h2>Returns</h2>
-      <p>(Array): Returns the new array of chunks.</p>
-      <h2>Example</h2>
-      <code>
-        _.chunk(['a', 'b', 'c', 'd'], 2) // => [['a', 'b'], ['c', 'd']]
-        _.chunk(['a', 'b', 'c', 'd'], 3) // => [['a', 'b', 'c'], 'd']]
+          <code>_.compact(array) </code>
+          <p>
+            Creates an array with all falsey values removed. The values false,
+            null, 0 "", undefined and NaN are falsey.
+          </p>
+          <h2>Since</h2>
+          <p>0.1.0</p>
+          <h2>Arguments</h2>
+          <p><span id="blu">array (Array)</span>: The array to compact</p>
+          <h2>Returns</h2>
+          <p>
+            <span id="blu">(Array)</span>: Returns the new array of filtered
+            values
+          </p>
+          <h2>Example</h2>
+          <code>_.compact([0, 1, false, 2, '', 3]) => [1, 2, 3]</code>
 
-      </code>
+          <code>_.concat(array, [values]) </code>
+          <p>
+            Creates a new array concatenating array with any additional array
+            and/or values.
+          </p>
+          <h2>Since</h2>
+          <p>4.0.0</p>
+          <h2>Arguments</h2>
+          <p><span id="blu">array (Array)</span>: The array to concatenate</p>
+          <p><span id="blu">[values] (...*)</span> The values to concatenate</p>
+          <h2>Returns</h2>
+          <p>
+            <span id="blu">(Array)</span>: Returns the new concatenated array.
+          </p>
+          <h2>Example</h2>
+          <code
+            >let array = [1], let other = _.concat(array, 2, [3], [[4]]);
+            console.log(other); // => [1,2,3, [4]] console.log(array) // => [1]
+          </code>
 
+          <code>_.difference(array, [values])</code>
+          <p>
+            Creates an array of array values not included in the other given
+            arrays using SameValueZero for equality comparisons. The order and
+            references of result values are determined by the first array.
+          </p>
+          <p>Note: unlike _.pullAll, this method returns a new array.</p>
+          <h2>Since</h2>
+          <p>0.1.0</p>
+          <h2>Arguments</h2>
+          <p><span id="blu">array (Array)</span>: The array to inspect</p>
+          <p>
+            <span id="blu">[values] (...Array)</span> The values to exclude.
+          </p>
+          <h2>Returns</h2>
+          <p>
+            <span id="blu">(Array)</span>: Returns the new array of filtered
+            values.
+          </p>
+          <h2>Example</h2>
+          <code>
+            _.difference([2,1][2, 3]) // => [1]
+          </code>
 
-      <code>_.compact(array)
-      </code>
-      <p>Creates an array with all falsey values removed. The values false, null, 0 "", undefined and NaN are falsey.</p>
-      <h2>Since</h2>
-      <p>0.1.0</p>
-      <h2>Arguments</h2>
-      <p>array (Array): The array to compact</p>
-      <h2>Returns</h2>
-      <p>(Array): Returns the new array of filtered values</p>
-      <h2>Example</h2>
-      <code>_.compact([0, 1, false, 2, '', 3]) => [1, 2, 3]</code>
-
-      <code>_.concat(array, [values])
-      </code>
-        <p>Creates a new array concatenating array with any additional array and/or values.</p>
-        <h2>Since</h2>
-        <p>4.0.0</p>
-        <h2>Arguments</h2>
-        <p>array (Array): The array to concatenate</p>
-        <p>[values] (...*) The values to concatenate </p>
-        <h2>Returns</h2>
-        <p>(Array): Returns the new concatenated array.</p>
-        <h2>Example</h2>
-        <code>let array = [1], let other = _.concat(array, 2, [3], [[4]]);
-          console.log(other);
-          // => [1,2,3, [4]]
-          console.log(array)
-          // => [1]
-        </code>
-
-
-        <code>_.difference(array, [values])</code>
-        <p>Creates an array of array values not included in the other given arrays using SameValueZero for equality comparisons. The order and references of result values are determined by the first array.</p>
-        <p>Note: unlike _.pullAll, this method returns a new array.</p>
-        <h2>Since</h2>
-        <p>0.1.0</p>
-        <h2>Arguments</h2>
-        <p>array (Array): The array to inspect</p>
-        <p>[values] (...Array) The values to exclude. </p>
-        <h2>Returns</h2>
-        <p>(Array): Returns the new array of filtered values.</p>
-        <h2>Example</h2>
-        <code>
-          _.difference([2,1][2, 3]) // => [1]
-        </code>
-
-        <code>
-          _.differenceBy(array, [values], [iteratee=_.identity])
-        </code>
-        <p>
-          This method is like _.difference except that it accepts iteratee which
-          is invoked for each element of array and values to generate the criterion
-          by which they're compared. The order and references of result values are
-          determined by the first array. The iteratee is invoked with one argument: (value).
-        </p>
-        <p>Note: Unlike _.pullAllBy, this method returns a new array.</p>
-        <h2>Since</h2>
-        <p>4.0.0</p>
-        <h2>Arguments</h2>
-        <p>array (Array): The array to inspect.</p>
-        <p>[values] (...Array): The values to exclude.</p>
-        <p>[iteratee=_.identity] (Function): The iteratee invoked per element.</p>
-        <h2>Returns</h2>
-        <p>(Array): Returns the new array of filtered values.</p>
-        <h2>Example</h2>
-        <code>
-            _.differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor);
-            // => [1.2]
-             
+          <code>
+            _.differenceBy(array, [values], [iteratee=_.identity])
+          </code>
+          <p>
+            This method is like _.difference except that it accepts iteratee
+            which is invoked for each element of array and values to generate
+            the criterion by which they're compared. The order and references of
+            result values are determined by the first array. The iteratee is
+            invoked with one argument: (value).
+          </p>
+          <p>Note: Unlike _.pullAllBy, this method returns a new array.</p>
+          <h2>Since</h2>
+          <p>4.0.0</p>
+          <h2>Arguments</h2>
+          <p><span id="blu">array (Array)</span>: The array to inspect.</p>
+          <p>
+            <span id="blu">[values] (...Array)</span>: The values to exclude.
+          </p>
+          <p>
+            <span id="blu">[iteratee=_.identity] (Function)</span>: The iteratee
+            invoked per element.
+          </p>
+          <h2>Returns</h2>
+          <p>
+            <span id="blu">(Array)</span>: Returns the new array of filtered
+            values.
+          </p>
+          <h2>Example</h2>
+          <code>
+            _.differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // => [1.2]  
             // The `_.property` iteratee shorthand.
             _.differenceBy([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], 'x');
             // => [{ 'x': 2 }]
-        </code>
-
-    </section>
-    <section class="main-section" id="Collection_Methods">
-        <header class="topic">"Collection" Methods</header>
-
-
-        <code>_.countBy(collection, [iteratee=_.identity])
           </code>
-          <p>Creates an object composed of keys generated from the results of running each element of collection thru iteratee. The corresponding value of each key is the number of times the key was returned by iteratee. The iteratee is invoked with one argument: (value).</p>
+        </section>
+        <section class="main-section" id="Collection_Methods">
+          <header class="topic">"Collection" Methods</header>
+
+          <code>_.countBy(collection, [iteratee=_.identity]) </code>
+          <p>
+            Creates an object composed of keys generated from the results of
+            running each element of collection thru iteratee. The corresponding
+            value of each key is the number of times the key was returned by
+            iteratee. The iteratee is invoked with one argument: (value).
+          </p>
           <h2>Since</h2>
           <p>0.5.0</p>
           <h2>Arguments</h2>
-          <p><span id="blu">Collection (Array|Object)</span>: The collection to iterate over.</p>
-          <p><span id="blu">[iteratee=_.identity] (Function)</span>: The iteratee to transform keys.</p>
+          <p>
+            <span id="blu">Collection (Array|Object)</span>: The collection to
+            iterate over.
+          </p>
+          <p>
+            <span id="blu">[iteratee=_.identity] (Function)</span>: The iteratee
+            to transform keys.
+          </p>
           <h2>Returns</h2>
-          <p><span id="blu">(Object)</span>: Returns the new composed aggregate object.</p>
+          <p>
+            <span id="blu">(Object)</span>: Returns the new composed aggregate
+            object.
+          </p>
           <h2>Example</h2>
           <code>
-              _.countBy([6.1, 4.2, 6.3], Math.floor);
-              // => { '4': 1, '6': 2 }
-            <br>
-              // The `_.property` iteratee shorthand.
-              _.countBy(['one', 'two', 'three'], 'length');
-              // => { '3': 2, '5': 1 }
+            _.countBy([6.1, 4.2, 6.3], Math.floor); // => { '4': 1, '6': 2 }
+            <br />
+            // The `_.property` iteratee shorthand. _.countBy(['one', 'two',
+            'three'], 'length'); // => { '3': 2, '5': 1 }
           </code>
 
           <code>_.forEach(collection, [iteratee=_.identity])</code>
-         <p>Iterates over elements of collection and invokes iteratee for each element. The iteratee is invoked with three arguments: (value, index|key, collection). Iteratee functions may exit iteration early by explicitly returning false.</p>
+          <p>
+            Iterates over elements of collection and invokes iteratee for each
+            element. The iteratee is invoked with three arguments: (value,
+            index|key, collection). Iteratee functions may exit iteration early
+            by explicitly returning false.
+          </p>
 
-         <p>Note: As with other "Collections" methods, objects with a "length" property are iterated like arrays. To avoid this behavior use _.forIn or _.forOwn for object iteration.</p>
+          <p>
+            Note: As with other "Collections" methods, objects with a "length"
+            property are iterated like arrays. To avoid this behavior use
+            _.forIn or _.forOwn for object iteration.
+          </p>
 
           <h2>Since</h2>
           <p>0.1.0</p>
@@ -154,32 +199,142 @@
           <p>_.each</p>
 
           <h2>Arguments</h2>
-          <p>collection (Array|Object): The collection to iterate over.</p>
-          <p>[iteratee=_.identity] (Function): The function invoked per iteration.</p>
+          <p>
+            <span id="blu">collection (Array|Object)</span>: The collection to
+            iterate over.
+          </p>
+          <p>
+            <span id="blu">[iteratee=_.identity] (Function)</span>: The function
+            invoked per iteration.
+          </p>
           <h2>Returns</h2>
-          <p>(*): Returns collection.</p>
+          <p><span id="blu">(*)</span>: Returns collection.</p>
           <h2>Example</h2>
-          <code>_.forEach([1, 2], function(value) {
-                console.log(value);
-                  });
-                  // => Logs `1` then `2`.
-              <br>
-              _.forEach({ 'a': 1, 'b': 2 }, function(value, key) {
-              console.log(key);
-              });
-              // => Logs 'a' then 'b' (iteration order is not guaranteed).
+          <code
+            >_.forEach([1, 2], function(value) { console.log(value); }); // =>
+            Logs `1` then `2`.
+            <br />
+            _.forEach({ 'a': 1, 'b': 2 }, function(value, key) {
+            console.log(key); }); // => Logs 'a' then 'b' (iteration order is
+            not guaranteed).
           </code>
-    </section>
-    <section class="main-section" id="String_Methods">
-        <header class="topic">"String" Methods</header>
-    </section>
-    <section class="main-section" id="Number_Methods">
-        <header class="topic">"Number" Methods</header>
-    </section>
-    <section class="main-section" id="Date_Methods">
-        <header class="topic">"Date"" Methods</header>
-    </section>
-  </div>
-  </main>
-</body>
+
+          <code>
+            _.forEachRight(collection, [iteratee=_.identity])
+          </code>
+
+          <p>
+            This method is like _.forEach except that it iterates over elements
+            of collection from right to left.
+          </p>
+
+          <h2>Since</h2>
+          <p>2.0.0</p>
+
+          <h2>Aliases</h2>
+          <p>_.eachRight</p>
+
+          <h2>Arguments</h2>
+          <p>
+            <span id="blu">collection (Array|Object)</span>: The collection to
+            iterate over.
+          </p>
+          <p>
+            <span id="blu">[iteratee=_.identity] (Function)</span>: The function
+            invoked per iteration.
+          </p>
+          <h2>Returns</h2>
+          <p><span id="blu">(*)</span>: Returns collection.</p>
+          <h2>Example</h2>
+          <code>
+            _.forEachRight([1, 2], function(value) { console.log(value); });
+            <br />
+            // => Logs `2` then `1`.
+          </code>
+          <code>
+            _.groupBy(collection, [iteratee=_.identity])
+          </code>
+          <p>
+            Creates an object composed of keys generated from the results of
+            running each element of collection thru iteratee. The order of
+            grouped values is determined by the order they occur in collection.
+            The corresponding value of each key is an array of elements
+            responsible for generating the key. The iteratee is invoked with one
+            argument: (value).
+          </p>
+          <h2>Since</h2>
+          <p>0.1.0</p>
+          <h2>Arguments</h2>
+          <p>
+            <span id="blu">collection(Array|Object)</span>:The collection to
+            iterate over.
+          </p>
+          <p>
+            <span id="blu">[iteratee=_.identity] (Function)</span>:The iteratee
+            to transform keys
+          </p>
+          <h2>Returns</h2>
+          <p>
+            <span id="blu">(Object)</span>:Returns the composed aggregate
+            object.
+          </p>
+          <h2>Example</h2>
+          <code>
+            _.groupBy([6.1, 4.2, 6.3], Math.floor);
+            <br />
+            // => '4': [4.2], '6', [6.1, 6.3]
+            <br />
+            // The `_.property` iteratee shorthand.
+            <br />
+            _.groupBy(['one', 'two', 'three'], 'length');
+            <br />
+            // => { '3': ['one', 'two'], '5': ['three'] }
+          </code>
+
+          <code>_.includes(collection, value, [fromIndex=0])</code>
+          <p>
+            Checks if value is in collection. If collection is a string, it's
+            checked for a substring of value, otherwise SameValueZero is used
+            for equality comparisons. If fromIndex is negative, it's used as the
+            offset from the end of collection.
+          </p>
+          <h2>Since</h2>
+          <p>0.1.0</p>
+          <h2>Arguments</h2>
+          <p><span id="blu">collection (Array|Object|String)</span>The collection to inspect.</p>
+          <p><span id="blu">value (*)</span>The value to search for.</p>
+          <p><span id="blu">[fromIndex=0] (number)</span>The index to serch from.</p>
+          <h2>Returns</h2>
+          <p><span id="blu">(boolean)</span>: Returns true if the value is found, else false.</p>
+          <h2>Example</h2>
+          <code>
+              _.includes([1, 2, 3], 1);
+              <br>
+              // => true
+              <br>
+              _.includes([1, 2, 3], 1, 2);
+              <br>
+              // => false
+              <br>
+              _.includes({ 'a': 1, 'b': 2 }, 1);
+              <br>
+              // => true
+              <br>
+              _.includes('abcd', 'bc');
+              <br>
+              // => true
+          </code>
+        </section>
+        <section class="main-section" id="String_Methods">
+          <header class="topic">"String" Methods</header>
+        </section>
+        <section class="main-section" id="Number_Methods">
+          <header class="topic">"Number" Methods</header>
+        </section>
+        <section class="main-section" id="Date_Methods">
+          <header class="topic">"Date"" Methods</header>
+        </section>
+      </div>
+    </main>
+  </body>
 </html>

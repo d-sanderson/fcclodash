@@ -16,7 +16,7 @@ nav > a {
 }
 header {
   font-size: 2em;
-  margin: 1% 1%
+  margin: 3% 1%
 }
 
 h2 {
@@ -39,6 +39,7 @@ code {
 
 span#blu {
   color: #3492ff;
+  font-weight: bold;
 }
 
 section {
@@ -46,8 +47,4 @@ section {
 }
 section > code  {
   font-size: 20px;
-}
-
-.container {
-  flex: 4;
 }
